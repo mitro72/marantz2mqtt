@@ -1,0 +1,171 @@
+button:
+  - platform: mqtt
+    unique_id: marantz_volume_up
+    name: "marantz volume up"
+    command_topic: "in_marantz"
+    payload_press: "@VOL:3\r"
+  - platform: mqtt
+    unique_id: marantz_volume_down
+    name: "marantz volume down"
+    command_topic: "in_marantz"
+    payload_press: "@VOL:4\r"
+  - platform: mqtt
+    unique_id: marantz_src_dvd
+    name: "marantz source dvd"
+    command_topic: "in_marantz"
+    payload_press: "@SRC:2\r"
+  - platform: mqtt
+    unique_id: marantz_src_tv
+    name: "marantz source tv"
+    command_topic: "in_marantz"
+    payload_press: "@SRC:1\r"
+  - platform: mqtt
+    unique_id: marantz_src_fm
+    name: "marantz source fm"
+    command_topic: "in_marantz"
+    payload_press: "@SRC:G\r"
+  - platform: mqtt
+    unique_id: marantz_src_bd
+    name: "marantz source bd"
+    command_topic: "in_marantz"
+    payload_press: "@SRC:M\r"
+  - platform: mqtt
+    unique_id: marantz_src_ld
+    name: "marantz source ld"
+    command_topic: "in_marantz"
+    payload_press: "@SRC:5\r"
+  - platform: mqtt
+    unique_id: marantz_src_usb
+    name: "marantz source usb"
+    command_topic: "in_marantz"
+    payload_press: "@SRC:7\r"
+  - platform: mqtt
+    unique_id: marantz_src_blt
+    name: "marantz source blt"
+    command_topic: "in_marantz"
+    payload_press: "@SRC:N\r"
+  - platform: mqtt
+    unique_id: marantz_sur_auto
+    name: "marantz source sur auto"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:00\r"
+  - platform: mqtt
+    unique_id: marantz_sur_pl2_movie
+    name: "marantz source sur PL2 movie"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:03\r"
+  - platform: mqtt
+    unique_id: marantz_sur_pl2_music
+    name: "marantz source sur PL2 music"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:05\r"
+  - platform: mqtt
+    unique_id: marantz_sur_DTS_ES
+    name: "marantz source sur DTS ES"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:0E\r"
+  - platform: mqtt
+    unique_id: marantz_sur_DTS
+    name: "marantz source sur DTS"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:0M\r"
+  - platform: mqtt
+    unique_id: marantz_sur_DD_EX
+    name: "marantz source sur DD EX"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:0C\r"
+  - platform: mqtt
+    unique_id: marantz_sur_stereo
+    name: "marantz source sur stereo"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:01\r"
+  - platform: mqtt
+    unique_id: marantz_sur_direct
+    name: "marantz source surce direct"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:0T\r"
+  - platform: mqtt
+    unique_id: marantz_pur_direct
+    name: "marantz source pure direct"
+    command_topic: "in_marantz"
+    payload_press: "@SUR:0U\r" 
+  - platform: mqtt
+    unique_id: marantz_sur_night_off
+    name: "marantz night mode OFF"
+    command_topic: "in_marantz"
+    payload_press: "@NGT:1\r"
+  - platform: mqtt
+    unique_id: marantz_sur_night_on
+    name: "marantz night mode ON"
+    command_topic: "in_marantz"
+    payload_press: "@NGT:2\r"
+  - platform: mqtt
+    unique_id: marantz_fm_up
+    name: "marantz FM up"
+    command_topic: "in_marantz"
+    payload_press: "@TFQ:3\r"
+  - platform: mqtt
+    unique_id: marantz_fm_down
+    name: "marantz FM down"
+    command_topic: "in_marantz"
+    payload_press: "@TFQ:4\r"
+  - platform: mqtt
+    unique_id: marantz_input_auto
+    name: "marantz input auto"
+    command_topic: "in_marantz"
+    payload_press: "@INP:0\r"
+  - platform: mqtt
+    unique_id: marantz_input_analog
+    name: "marantz input analog"
+    command_topic: "in_marantz"
+    payload_press: "@INP:1\r"
+  - platform: mqtt
+    unique_id: marantz_input_digital
+    name: "marantz input digital"
+    command_topic: "in_marantz"
+    payload_press: "@INP:2\r"
+  - platform: mqtt
+    unique_id: marantz_input_hdmi
+    name: "marantz input hdmi"
+    command_topic: "in_marantz"
+    payload_press: "@INP:4\r"
+sensor:
+  - platform: mqtt
+    name: "Marantz Power State"
+    state_topic: "out_marantz"
+  - platform: mqtt
+    name: "Marantz src State"
+    state_topic: "out_marantz/SRC"
+  - platform: mqtt
+    name: "Marantz sur State"
+    state_topic: "out_marantz/SUR"
+  - platform: mqtt
+    name: "Marantz ngt State"
+    state_topic: "out_marantz/NGT"
+  - platform: mqtt
+    name: "Marantz inp State"
+    state_topic: "out_marantz/INP"
+  - platform: mqtt
+    name: "Marantz vol State"
+    state_topic: "out_marantz/VOL"
+ switch:
+ - platform: mqtt
+   name: "marantz power"
+   command_topic: "in_marantz"
+   state_topic: "out_marantz"
+   payload_on: "@PWR:0\r"
+   payload_off: "@PWR:0\r"
+   state_on: "@PWR:2\r"
+   state_off: "@PWR:1\r"
+   qos: 0
+   retain: true
+ - platform: mqtt
+   name: "marantz mute"
+   command_topic: "in_marantz"
+   state_topic: "out_marantz"
+   payload_on: "@AMT:0\r"
+   payload_off: "@AMT:0\r"
+   state_on: "@AMT:2\r"
+   state_off: "@AMT:1\r"
+   qos: 0
+   retain: true 
