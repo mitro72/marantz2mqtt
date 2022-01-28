@@ -1,0 +1,373 @@
+type: vertical-stack
+cards:
+  - type: custom:button-card
+    entity: switch.marantz_power
+    color_type: icon
+    color: rgb(255, 124, 0)
+    icon: mdi:power
+    size: 10%
+    name: MARANTZ SR6004
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        entity: button.volume_down_1
+        name: VOLUME
+        size: 30%
+        icon: mdi:volume-minus
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.volume_down
+      - type: custom:button-card
+        entity: button.volume_up
+        name: VOLUME
+        size: 30%
+        icon: mdi:volume-plus
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.volume_up
+      - type: custom:button-card
+        entity: switch.marantz_mute
+        name: MUTE
+        size: 30%
+        icon: mdi:volume-mute
+        state:
+          - value: 'on'
+            color: rgb(255, 124, 0)
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        entity: sensor.marantz_src_state
+        name: TV
+        size: 30%
+        icon: mdi:television
+        state:
+          - value: "@SRC:M1\r"
+            color: rgb(255, 124, 0)
+          - value: "@SRC:21\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_tv
+      - type: custom:button-card
+        entity: sensor.marantz_src_state
+        name: BD
+        size: 30%
+        icon: mdi:disc-player
+        state:
+          - value: "@SRC:MM\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_bd
+      - type: custom:button-card
+        entity: sensor.marantz_src_state
+        name: DVD
+        size: 30%
+        icon: mdi:disc-player
+        state:
+          - value: "@SRC:22\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_dvd
+      - type: custom:button-card
+        entity: sensor.marantz_src_state
+        name: FM
+        size: 30%
+        icon: mdi:radio-tower
+        state:
+          - value: "@SRC:2G\r"
+            color: rgb(255, 124, 0)
+          - value: "@SRC:MG\r"
+            color: rgb(255, 124, 0)
+          - value: "@SRC:9G\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_fm
+      - type: custom:button-card
+        entity: sensor.marantz_src_state
+        name: BLT
+        size: 30%
+        icon: mdi:bluetooth
+        state:
+          - value: "@SRC:2N\r"
+            color: rgb(255, 124, 0)
+          - value: "@SRC:MN\r"
+            color: rgb(255, 124, 0)
+          - value: "@SRC:9N\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_blt
+      - type: custom:button-card
+        entity: sensor.marantz_src_state
+        name: USB
+        size: 30%
+        icon: mdi:usb
+        state:
+          - value: "@SRC:27\r"
+            color: rgb(255, 124, 0)
+          - value: "@SRC:97\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_source_usb
+      - type: custom:button-card
+        entity: sensor.marantz_src_state
+        name: Vinyl
+        size: 30%
+        icon: mdi:album
+        state:
+          - value: "@SRC:55\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_source_ld
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: P. DIRECT
+        size: 20%
+        icon: mdi:cosine-wave
+        state:
+          - value: "@SUR:U\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_pure_direct
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: S. DIRECT
+        size: 20%
+        icon: mdi:sine-wave
+        state:
+          - value: "@SUR:T\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_surce_direct
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: DOLBY
+        size: 20%
+        icon: mdi:dolby
+        state:
+          - value: "@SUR:2\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_sur_auto
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: STEREO
+        size: 20%
+        icon: mdi:surround-sound-2-0
+        state:
+          - value: "@SUR:1\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_sur_stereo
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: AUTO
+        size: 20%
+        icon: mdi:surround-sound
+        state:
+          - value: "@SUR:0\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.source_sur_auto
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: DD EX
+        size: 20%
+        icon: mdi:dolby
+        state:
+          - value: "@SUR:C\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_source_sur_dd_ex
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: DTS ES
+        size: 20%
+        icon: mdi:surround-sound
+        state:
+          - value: "@SUR:M\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_source_sur_dts_es
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: DTS
+        size: 20%
+        icon: mdi:surround-sound
+        state:
+          - value: "@SUR:F\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_source_sur_dts
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: PL II Music
+        size: 20%
+        icon: mdi:dolby
+        state:
+          - value: "@SUR:6\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_source_sur_pl2_music
+      - type: custom:button-card
+        entity: sensor.marantz_sur_state
+        name: PL II Movie
+        size: 20%
+        icon: mdi:dolby
+        state:
+          - value: "@SUR:4\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_source_sur_pl2_movie
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        entity: sensor.marantz_ngt_state
+        name: Night mode ON
+        size: 20%
+        icon: mdi:broadcast
+        state:
+          - value: "@NGT:2\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_night_mode_on
+      - type: custom:button-card
+        entity: sensor.marantz_ngt_state
+        name: Night mode OFF
+        size: 20%
+        icon: mdi:broadcast-off
+        state:
+          - value: "@NGT:1\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_night_mode_off
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        entity: sensor.marantz_inp_state
+        name: AUTO
+        size: 20%
+        icon: mdi:music-box
+        state:
+          - value: "@INP:0\r"
+            color: rgb(255, 124, 0)
+          - value: "@INP:8\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_input_auto
+      - type: custom:button-card
+        entity: sensor.marantz_inp_state
+        name: ANALOG rca
+        size: 20%
+        icon: mdi:sine-wave
+        state:
+          - value: "@INP:1\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_input_analog
+      - type: custom:button-card
+        entity: sensor.marantz_inp_state
+        name: DIGITAL optic
+        size: 20%
+        icon: mdi:square-wave
+        state:
+          - value: "@INP:2\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_input_digital
+      - type: custom:button-card
+        entity: sensor.marantz_inp_state
+        name: HDMI audio
+        size: 20%
+        icon: mdi:video-input-hdmi
+        state:
+          - value: "@INP:4\r"
+            color: rgb(255, 124, 0)
+        tap_action:
+          action: call-service
+          service: button.press
+          service_data:
+            entity_id: button.marantz_input_hdmi
+  - type: gauge
+    entity: sensor.marantz_vol_state
+    name: volume
+    unit: db
+    max: 18
+    min: -71
+    needle: true
+    severity:
+      green: -71
+      yellow: -17
+      red: -5
